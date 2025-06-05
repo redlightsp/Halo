@@ -1,33 +1,39 @@
-agent_profile = {
-    "agent_name": "Halo",
-    "specialization": "Internet Safety",
-    "target_audience": {
-        "age_range": "up to 13",
-        "audience_type": "Children"
-    },
-    "mission": "To protect, educate, and empower children with safe and smart online behaviors.",
-    "skills": [
-        "Online privacy education",
-        "Cyberbullying prevention",
-        "Parental control guidance",
-        "Safe social media habits",
-        "Digital citizenship training"
-    ],
-    "brand_voice": "Empowering, educational, and friendly",
-    "affiliation": "SHE CAN DO I.T.™ Movement"
-}
+import streamlit as st
 
-# Display summary
-def display_agent_summary(agent):
-    print(f"Agent Name: {agent['agent_name']}")
-    print(f"Specialization: {agent['specialization']}")
-    print(f"Target Audience: {agent['target_audience']['audience_type']} (Age {agent['target_audience']['age_range']})")
-    print(f"Mission: {agent['mission']}")
-    print("Core Skills:")
-    for skill in agent["skills"]:
-        print(f" - {skill}")
-    print(f"Brand Voice: {agent['brand_voice']}")
-    print(f"Affiliation: {agent['affiliation']}")
+# Agent Profile
+agent_name = "Halo"
+specialization = "Internet Safety for Children"
+age_range = "Up to Age 13"
+mission = "To protect, educate, and empower children with safe and smart online behaviors."
+skills = [
+    "Online privacy education",
+    "Cyberbullying prevention",
+    "Parental control guidance",
+    "Safe social media habits",
+    "Digital citizenship training"
+]
+brand_voice = "Empowering, educational, and friendly"
+affiliation = "SHE CAN DO I.T.™ Movement"
 
-# Run summary
-display_agent_summary(agent_profile)
+# Streamlit App Layout
+st.set_page_config(page_title="Meet Halo", layout="centered")
+
+st.title("🛡️ Meet Halo")
+st.subheader("Your Digital Safety Ally for Kids")
+
+st.markdown(f"**Agent Name:** {agent_name}")
+st.markdown(f"**Specialization:** {specialization}")
+st.markdown(f"**Target Audience:** Children ({age_range})")
+st.markdown(f"**Mission:** {mission}")
+
+st.markdown("### 👩🏾‍💻 Core Skills")
+for skill in skills:
+    st.markdown(f"- {skill}")
+
+st.markdown(f"**Brand Voice:** {brand_voice}")
+st.markdown(f"**Affiliation:** {affiliation}")
+
+st.success("Halo is here to make the internet a safer place for every child.")
+
+# Optional: Add image or branding
+# st.image("halo_logo.png", caption="Halo – Empowering Kids Online", use_column_width=True)
